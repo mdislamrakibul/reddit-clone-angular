@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <hr />
+        <div class="col-md-9">
+            <h3>List of Posts For Subreddit - <span style="font-weight: bold;">{{subreddit?.name}}</span></h3>
+            <div class="row post">
+                <div class="col-md-12">
+                    <div *ngIf="posts && posts?.length;else noPosts">
+                        <app-post-title [data]="posts"></app-post-title>
+                    </div>
+                    <ng-template #noPosts>
+                        <h3>No Posts Found For this subreddit</h3>
+                    </ng-template>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-side-bar></app-side-bar>
+            <app-subreddit-side-bar></app-subreddit-side-bar>
+        </div>
+    </div>
+</div>
